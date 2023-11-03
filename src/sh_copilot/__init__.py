@@ -8,7 +8,7 @@ from sh_copilot.copilot import ShCopilot
 from sh_copilot.ai import AIContext, AIModelFactory
 from sh_copilot.config import Config
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 
 def main():
