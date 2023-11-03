@@ -1,2 +1,4 @@
+from sh_copilot import __version__
+
 def test_placeholder():
-    assert True
+    assert __version__

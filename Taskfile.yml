@@ -3,7 +3,8 @@
 version: '3'
 
 vars:
-  NAME: sh_copilot
+  NAME: sh-copilot
+  NAME_ALT: sh_copilot
   VENV_DIR: venv
   CHECKS_DIR: .checks
   PYTHON_BIN: "{{ .VENV_DIR }}/bin/python3"
@@ -149,10 +150,10 @@ tasks:
         -m pytest
         -v
         -n 4
-        --cov={{ .NAME }}
+        --cov={{ .NAME_ALT }}
         --junitxml="{{ .CHECKS_DIR }}/result.xml"
         --html="{{ .CHECKS_DIR }}/report.html"
-        "tests/{{ .NAME }}"
+        "tests/{{ .NAME_ALT }}"
       - >
         {{ .COVERAGE_BIN }}
         html
@@ -237,7 +238,7 @@ tasks:
     cmds:
       - >
         {{ .PYTHON_BIN }}
-        -c "import sys; sys.argv[0] = '{{ .NAME }}'; from {{ .NAME }} import main; main()"
+        -c "import sys; sys.argv[0] = '{{ .NAME_ALT }}'; from {{ .NAME_ALT }} import main; main()"
         {{ .CLI_ARGS }}
 
   run:
