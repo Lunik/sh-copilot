@@ -38,7 +38,7 @@ setup(
     entry_points={
         "console_scripts": ["sc = sh_copilot:main", "sh_copilot = sh_copilot:main"],
     },
-    python_requires=">=3.8.0",
+    python_requires=">=3.11.0",
     install_requires=[
         "pydantic==2.*",
         "pyyaml==6.*",
